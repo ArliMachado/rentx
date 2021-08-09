@@ -26,6 +26,10 @@
         "prettier"
     ],
     "rules": {
+      "react/prop-types": "off",
+      "react/require-default-props": "off",
+      "react/jsx-props-no-spreading": "off",
+
       "camelcase": "off",
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "warn",
