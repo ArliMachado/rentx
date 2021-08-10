@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { StatusBar } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
@@ -8,6 +9,8 @@ import { Car } from '../../components/Car';
 import { Container, Header, HeaderContent, TotalCars, CarList } from './styles';
 
 export function Home() {
+  const navigation = useNavigation();
+
   const carData = {
     brand: 'porche',
     name: 'Panamera',
@@ -18,6 +21,10 @@ export function Home() {
     thumbnail:
       'https://catalogo.webmotors.com.br/imagens/prod/347468/PORSCHE_PANAMERA_2.9_V6_EHYBRID_4_PDK_3474681900348621.png?s=fill&w=236&h=135&q=70&t=true',
   };
+
+  function handleCarDetails() {
+    navigation.navigate('CarDetails');
+  }
 
   return (
     <Container>
@@ -37,7 +44,9 @@ export function Home() {
       <CarList
         data={[1, 2, 3, 4, 5, 6, 7, 8]}
         keyExtractor={item => String(item)}
-        renderItem={({ item }) => <Car data={carData} />}
+        renderItem={({ item }) => (
+          <Car data={carData} onPress={handleCarDetails} />
+        )}
       />
     </Container>
   );
