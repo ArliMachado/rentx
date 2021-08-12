@@ -45,15 +45,20 @@ import { Button } from '../../components/Button';
 export function SchedulingDetails() {
   const theme = useTheme();
 
-  const { navigate } = useNavigation();
+  const navigation = useNavigation();
 
   function handleConfirmRental() {
-    navigate('SchedulingComplete');
+    navigation.navigate('SchedulingComplete');
   }
+
+  function handleBack() {
+    navigation.goBack();
+  }
+
   return (
     <Container>
       <Header>
-        <BackButton onPress={() => {}} />
+        <BackButton onPress={handleBack} />
       </Header>
 
       <CarImages>

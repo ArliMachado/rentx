@@ -24,10 +24,14 @@ import { Calendar } from '../../components/Calendar';
 export function Scheduling() {
   const theme = useTheme();
 
-  const { navigate } = useNavigation();
+  const navigation = useNavigation();
 
   function handleConfirmRental() {
-    navigate('SchedulingDetails');
+    navigation.navigate('SchedulingDetails');
+  }
+
+  function handleBack() {
+    navigation.goBack();
   }
 
   return (
@@ -38,7 +42,7 @@ export function Scheduling() {
           translucent
           backgroundColor="transparent"
         />
-        <BackButton color={theme.colors.shape} onPress={() => {}} />
+        <BackButton color={theme.colors.shape} onPress={handleBack} />
 
         <Title>
           Escolha uma {'\n'}
