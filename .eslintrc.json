@@ -39,6 +39,7 @@
       "import/prefer-default-export": "off",
       "@typescript-eslint/camelcase": "off",
       "@typescript-eslint/explicit-module-boundary-types": "off",// x-x
+      "@typescript-eslint/no-non-null-assertion": "off",
       "react/jsx-filename-extension": [
         1,
         {
