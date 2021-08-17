@@ -15,7 +15,7 @@ import Animated, {
 
 import Logo from '../../assets/logo.svg';
 import { Car } from '../../components/Car';
-import { Load } from '../../components/Load';
+import { LoadAnimation } from '../../components/LoadAnimation';
 import { CarDTO } from '../../dtos/CarDTO';
 import api from '../../services/api';
 
@@ -101,7 +101,7 @@ export function Home() {
       </Header>
 
       {loading ? (
-        <Load />
+        <LoadAnimation />
       ) : (
         <CarList
           data={cars}
